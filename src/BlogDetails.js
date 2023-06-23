@@ -4,12 +4,12 @@ import useFetch from "./useFetch";
 
 const BlogDetails = () => {
     const { id } = useParams()
-    const { data: blogs, error, isPending } = useFetch('http://localhost:8000/blogs/' + id);
+    const { data: blogs, error, isPending } = useFetch('https://full-carpal-pick.glitch.me/blogs/' + id);
     const history = useNavigate();
 
     const handleClick = () => {
 
-        fetch('http://localhost:8000/blogs/' + blogs.id, {
+        fetch('https://full-carpal-pick.glitch.me/blogs/' + blogs.id, {
             method: 'DELETE'
         }).then(() => {
             history('/');
